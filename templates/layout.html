@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="bootstrap, bootstrap4" />
+
+  <!-- Bootstrap CSS -->
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/tiny-slider.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+  <title>THRIFT-STORE</title>
+
+</head>
+
+<body>
+
+  <!-- Start Header/Navigation with Frosted Glass Effect -->
+ <nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark glass-effect">
+    <div class="container-fluid">
+      <!-- Brand Name -->
+      <a class="navbar-brand me-5" href="/">THRIFT_STORE<span>.</span></a> <!-- Added me-5 to create space -->
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+        aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse justify-content-between" id="navbarsFurni">
+        <ul class="navbar-nav ms-5 mb-2 mb-md-0">  <!-- Added ms-5 for spacing -->
+          <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact us</a></li>
+        </ul>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/login">
+              <img src="{{ url_for('static', filename='images/user.svg') }}" alt="User">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cart">
+              <img src="{{ url_for('static', filename='images/cart.svg') }}" alt="Cart">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+  <!-- End Header/Navigation -->
+
+  <!-- Start Hero Section -->
+  <div class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="intro-excerpt">
+            <h1>Unique Thrift <span class="d-block">Store Finds</span></h1>
+            <p class="mb-4">Discover one-of-a-kind, gently used items at unbeatable prices. Shop sustainably and give pre-loved items a new home today.</p>
+            <p><a href="/shop" class="btn btn-secondary me-2">Browse Collection</a><a href="/about" class="btn btn-white-outline">Learn More</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Hero Section -->
+
+{% block body %}{% endblock %}
+
+
+  <!-- Start Footer with Frosted Glass Effect -->
+  <footer class="footer-section glass-effect">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p>&copy; <script>document.write(new Date().getFullYear());</script> THRIFT-STORE. All Rights Reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <ul class="list-unstyled d-inline-flex">
+            <li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- End Footer -->
+<script src="{{ url_for('static', filename='js/carousel-init.js') }}"></script>  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/tiny-slider.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+
+</html>

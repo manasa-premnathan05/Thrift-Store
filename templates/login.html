@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrift Store · Login</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-0evHe/X+R7YkZlupzNXd4fQK6SGbWIv4eqdxek5VfCZV9DrtPlOjg7lxhZ1q8PeG"
+        crossorigin="anonymous">
+     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/tiny-slider.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <style>
+        /* Body with Full-Page Background */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background: url('{{ url_for("static", filename="images/login-img.jpg") }}')
+                no-repeat center center/cover;
+            background-attachment: fixed;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* Center the login box vertically and horizontally */
+        .contact-page-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Glass card styling */
+        .glass-card {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            color: white;
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Form Control Styling */
+        .form-control {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 30px;
+            height: 50px;
+            margin-bottom: 20px;
+            color: white;
+            padding-left: 20px;
+            text-align: center;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Button Styling */
+        .btn-custom {
+            background: #ff7675;
+            border: none;
+            border-radius: 30px;
+            padding: 15px;
+            width: 100%;
+            color: white;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: #d63031;
+            transform: scale(1.05);
+        }
+
+        /* Links under the form */
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .login-options a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+
+        .login-options a:hover {
+            color: white;
+        }
+
+        /* Footer Styling */
+        .footer-section {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: auto;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand me-5" href="/">THRIFT_STORE<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarsFurni">
+                <ul class="navbar-nav ms-5">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact us</a></li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">
+                            <img src="{{ url_for('static', filename='images/user.svg') }}" alt="User">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart">
+                            <img src="{{ url_for('static', filename='images/cart.svg') }}" alt="Cart">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+   <!-- Login Form -->
+<div class="contact-page-wrapper">
+    <div class="glass-card">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+    <button type="submit" class="btn btn-custom">Get Started</button>
+
+    <div class="login-options">
+        <a href="#">Keep Logged In</a>
+        <a href="#">Forgot Password?</a>
+    </div>
+
+    <div class="login-options mt-3">
+        <a href="#">Create Account</a>
+        <a href="#">Need Help?</a>
+    </div>
+</form>
+
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <footer class="footer-section" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; <script>document.write(new Date().getFullYear());</script> THRIFT-STORE. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-unstyled d-inline-flex">
+                        <li class="me-4"><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

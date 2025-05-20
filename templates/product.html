@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<style>
+  /* Custom Navbar Styling */
+.custom-navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    padding: 15px 0;
+    background: rgba(33, 37, 41, 0.8); /* Dark transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+}
+
+/* Additional Spacing for Navbar */
+.custom-navbar .navbar-brand {
+    margin-left: 15px; /* Space from the left edge */
+    margin-right: 50px; /* Extra space between brand and links */
+}
+
+.custom-navbar .navbar-nav {
+    gap: 20px; /* Space between navigation links */
+}
+
+/* Navbar Icons Styling */
+.custom-navbar .navbar-nav img {
+    height: 24px;
+    width: 24px;
+}
+
+/* Ensure Navbar is Properly Spaced on Large Screens */
+@media (min-width: 992px) {
+    .custom-navbar {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/* Hero Section Styling */
+.hero {
+    height: 80vh;
+    background: url('{{ url_for('static', filename='images/login-img.jpg') }}') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #f5f5f5;
+    margin-bottom: 30px;
+}
+
+/* Footer Styling */
+.footer-section {
+    background-color: #212529; /* Same as the navbar's color */
+    color: white;
+    padding: 30px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+    text-align: center;
+}
+
+/* Footer Links Styling */
+.footer-section a {
+    color: #ffffff; /* Full white */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: rgba(255, 255, 255, 0.7); /* Slightly lighter white on hover */
+}
+
+/* Page Content Margin for Fixed Header and Footer */
+.page-content {
+    margin-top: 80px; /* Space for fixed navbar */
+    margin-bottom: 80px; /* Space for fixed footer */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+</style>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{{ url_for('static', filename='images/' + product.img_file) }}" alt="{{ product.p_name }}" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6">
+        <h1>{{ product.p_name }}</h1>
+        <p>{{ product.p_details }}</p>
+        <h2 class="text-danger">Rs{{ product.p_price }}</h2>
+
+        <!-- Corrected Add to Cart Form -->
+        <form action="{{ url_for('add_to_cart', product_id=product.p_no) }}" method="POST">
+            <button type="submit" class="btn btn-primary btn-lg mt-3">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </form>
+
+        <a href="#" class="btn btn-success btn-lg mt-3">
+            <i class="fas fa-credit-card"></i> Buy Now
+        </a>
+
+        <div class="mt-4">
+          <a href="/" class="btn btn-secondary">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

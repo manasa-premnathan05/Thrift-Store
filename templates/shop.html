@@ -1,0 +1,234 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<style>
+
+
+
+
+/* Product Grid Spacing */
+.product-grid .col {
+    margin-bottom: 30px; /* Add spacing between rows */
+}
+
+/* Product Item Styling */
+.product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 15px;
+    height: 100%;  /* Ensure the product cards take full height */
+    text-align: center;
+}
+
+/* Product Item Hover Effect */
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Thumbnail Styling */
+.product-thumbnail {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Title Styling */
+.product-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* Price Styling */
+.product-price {
+    color: #e74c3c;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Card Text Styling */
+.card-text {
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* Ensure consistent column height alignment */
+.row .col {
+    display: flex;
+    align-items: stretch; /* Make all cards stretch equally */
+}
+
+/* Footer Section Spacing */
+.footer-section {
+    margin-top: 50px;
+    background-color: #212529;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* Add some margin at the bottom to avoid the footer overlapping the content */
+.page-content {
+    margin-bottom: 120px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .product-thumbnail {
+        height: 200px; /* Reduce thumbnail height on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .product-item {
+        margin-bottom: 20px; /* Reduce spacing on very small screens */
+    }
+}
+
+
+
+  .icon-cross {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 5px;
+    display: none; /* Initially hidden */
+  }
+
+  .product-item:hover .icon-cross {
+    display: block; /* Show on hover */
+  }
+
+  /* Ensure proper spacing between products */
+  .product-grid .col {
+    padding: 15px;
+  }
+
+</style>
+<style>
+
+
+  .product-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+
+  /* Custom Navbar Styling */
+.custom-navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    padding: 15px 0;
+    background: rgba(33, 37, 41, 0.8); /* Dark transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+}
+
+/* Additional Spacing for Navbar */
+.custom-navbar .navbar-brand {
+    margin-left: 15px; /* Space from the left edge */
+    margin-right: 50px; /* Extra space between brand and links */
+}
+
+.custom-navbar .navbar-nav {
+    gap: 20px; /* Space between navigation links */
+}
+
+/* Navbar Icons Styling */
+.custom-navbar .navbar-nav img {
+    height: 24px;
+    width: 24px;
+}
+
+/* Ensure Navbar is Properly Spaced on Large Screens */
+@media (min-width: 992px) {
+    .custom-navbar {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/* Hero Section Styling */
+.hero {
+    height: 80vh;
+    background: url('{{ url_for('static', filename='images/login-img.jpg') }}') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #f5f5f5;
+    margin-bottom: 30px;
+}
+
+
+
+/* Footer Links Styling */
+.footer-section a {
+    color: #ffffff; /* Full white */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: rgba(255, 255, 255, 0.7); /* Slightly lighter white on hover */
+}
+
+
+
+
+}
+
+</style>
+
+<div class="untree_co-section product-section">
+  <div class="container">
+    <h2 class="section-heading text-center mb-4">✨ Shop Our Products ✨</h2>
+
+    <div class="row product-grid">
+      {% for product in products %}
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch">
+        <a class="product-item" href="/product/{{ product.slug }}">
+          <img src="{{ url_for('static', filename='images/' + product.img_file) }}"
+               class="img-fluid product-thumbnail" alt="{{ product.p_name }}">
+          <h3 class="product-title">{{ product.p_name }}</h3>
+          <p class="card-text">{{ product.p_details }}</p>
+          <strong class="product-price">${{ product.p_price }}</strong>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Add some spacing at the bottom to avoid footer overlap -->
+<div style="height: 100px;"></div>
+
+{% endblock %}

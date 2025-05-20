@@ -1,0 +1,355 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<style>
+     /* Frosted Glass Effect for Header and Footer */
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+      backdrop-filter: blur(10px); /* Blur effect */
+      -webkit-backdrop-filter: blur(10px); /* Safari support */
+      border-radius: 10px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    //carousel
+/* Card Styling */
+.card {
+    width: 100%;  /* Ensure the card takes up full column width */
+    height: 100%;  /* Force all cards to have the same height */
+    display: flex;
+    flex-direction: column; /* Ensure the content stacks vertically */
+    justify-content: space-between; /* Space out content */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-inner {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure the items don't break into a new row */
+    align-items: center; /* Vertically align items */
+}
+
+.carousel-item {
+    flex: 0 0 auto; /* Ensure items stay in a row */
+    margin-right: 10px; /* Space between items */
+}
+
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.carousel-item {
+    text-align: center;
+    padding: 15px;
+}
+
+.row-cols-md-3 > .col {
+    display: flex;
+    justify-content: center;
+}
+
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item {
+    text-align: center;
+    padding: 15px;
+}
+
+.row-cols-md-3 > .col {
+    display: flex;
+    justify-content: center;
+}
+
+/* Section Heading Styling */
+.section-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #212529;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section-heading::after {
+    content: "";
+    width: 60%;
+    height: 4px;
+    background-color: #f9bf29; /* Accent color for underline */
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Make controls more visible */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+/* Carousel Item Spacing */
+.carousel-inner {
+    gap: 15px;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 200px;  /* Standardize image height */
+    object-fit: cover;  /* Crop image to fit nicely */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-body {
+    flex-grow: 1;  /* Ensure card content stretches evenly */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    flex-grow: 1; /* Ensure the description stretches within the card */
+    margin-bottom: 10px;
+}
+
+/* Price Styling */
+.card-text.text-danger {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Ensure Column Spacing */
+.col {
+    margin-bottom: 15px;  /* Add spacing between cards */
+}
+
+/* Carousel Item Styling */
+.carousel-item {
+    padding: 15px;
+}
+
+.carousel-inner {
+    display: flex;
+    gap: 15px;
+}
+
+/* Ensure Consistent Card Sizes */
+.col {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;  /* Ensure columns stretch to the same height */
+}
+
+.card {
+    height: 100%;  /* Ensure all cards are of equal height */
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 50%; /* Show 2 items per slide on medium screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item {
+        width: 100%; /* Show 1 item per slide on small screens */
+    }
+}
+
+
+    //carousel
+
+
+    /* Custom Navbar Styling */
+    .custom-navbar {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      padding: 15px 0;
+    }
+
+    /* Additional Spacing for Navbar */
+.custom-navbar .navbar-brand {
+    margin-left: 15px;  /* Adds space from the left edge */
+}
+
+.custom-navbar .navbar-nav {
+    gap: 20px; /* Space between nav links */
+}
+
+/* Fine-tuning Navbar Spacing */
+.custom-navbar .navbar-brand {
+    margin-right: 50px;  /* Extra space between brand and links */
+}
+
+.custom-navbar .navbar-nav {
+    gap: 20px;  /* Adjust space between nav items */
+}
+
+
+.custom-navbar .navbar-nav img {
+    height: 24px;
+    width: 24px;
+}
+
+/* Ensure Navbar is Properly Spaced on Large Screens */
+@media (min-width: 992px) {
+    .custom-navbar {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+    /* Hero Section Styling */
+    .hero {
+      height: 80vh;
+      background: url('{{ url_for('static', filename='images/login-img.jpg') }}') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #fff;
+    }
+
+    .hero p {
+      color: #f5f5f5;
+    }
+
+    /* Footer Styling */
+    .footer-section {
+      background-color: #212529; /* Same as the navbar's color */
+      color: white;
+      padding: 40px 0;
+      padding: 30px 0;
+      position:static ;
+      width: 100%;
+      bottom: 0;
+      z-index: 10;
+    }
+
+    /* Styling Links */
+    a {
+      color:white;
+      text-decoration: none;
+    }
+
+   .footer-section a {
+    color: #ffffff; /* Full white on hover */
+}
+
+
+    /* Page Content Margin for Fixed Header and Footer */
+    .page-content {
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+</style>
+
+<div class="container my-5">
+    <!-- Section Heading -->
+    <h2 class="section-heading text-center mb-4">✨ Newly Added Items ✨</h2>
+
+    <!-- Carousel -->
+    <div id="newItemsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for product_chunk in products|batch(4, fill_with=None) %}
+                <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
+                    <div class="row justify-content-center">
+                        {% for product in product_chunk %}
+                            {% if product %}
+                                <div class="col">
+                                    <div class="card mx-auto">
+                                        <img src="{{ url_for('static', filename='images/' + product.img_file) }}"
+                                             class="card-img-top"
+                                             alt="{{ product.p_name }}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ product.p_name }}</h5>
+                                            <p class="card-text">{{ product.p_details }}</p>
+                                            <p class="card-text text-danger"><strong>${{ product.p_price }}</strong></p>
+                                            <a href="/product/{{ product.slug }}" class="btn btn-primary">View Product</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#newItemsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#newItemsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+
+
+{% endblock %}

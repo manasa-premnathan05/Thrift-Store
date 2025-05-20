@@ -1,0 +1,636 @@
+/*
+* Template Name: UntreeStore
+* Template Author: Untree.co
+* Author URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/
+
+
+//shop
+/* Hero Section */
+.hero {
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+/* Section Headings */
+.section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.section-heading::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #f9bf29;
+    margin: 10px auto;
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+/* Team Section */
+img.rounded-circle {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.bg-dark {
+    background-color: #212529 !important;
+}
+
+//shop
+
+//contact page
+/* Contact Page Wrapper */
+.contact-page-wrapper {
+    height: 100vh;
+    background: url('{{ url_for("static", filename="images/login-img.jpg") }}') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glass Card Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    padding: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.glass-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Info Icons */
+.contact-info .service-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #74b9ff;
+}
+
+.contact-info p {
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Form Styling */
+.contact-form .form-control {
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+.contact-form .btn {
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #0984e3, #74b9ff);
+    border: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.contact-form .btn:hover {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .glass-card {
+        padding: 20px;
+    }
+}
+
+//contact page
+//carousel
+ /* Frosted Glass Effect for Header and Footer */
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+      backdrop-filter: blur(10px); /* Blur effect */
+      -webkit-backdrop-filter: blur(10px); /* Safari support */
+      border-radius: 10px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    //carousel
+
+    .card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-inner {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure the items don't break into a new row */
+    align-items: center; /* Vertically align items */
+}
+
+.carousel-item {
+    flex: 0 0 auto; /* Ensure items stay in a row */
+    margin-right: 10px; /* Space between items */
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.carousel-item {
+    text-align: center;
+    padding: 15px;
+}
+
+.row-cols-md-3 > .col {
+    display: flex;
+    justify-content: center;
+}
+
+    .card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item {
+    text-align: center;
+    padding: 15px;
+}
+
+.row-cols-md-3 > .col {
+    display: flex;
+    justify-content: center;
+}
+
+/* Section Heading Styling */
+.section-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #212529;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section-heading::after {
+    content: "";
+    width: 60%;
+    height: 4px;
+    background-color: #f9bf29; /* Accent color for underline */
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Make controls more visible */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+/* Carousel Item Spacing */
+.carousel-inner {
+    gap: 15px;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.carousel-item {
+    text-align: center;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 50%; /* Show 2 items per slide on medium screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item {
+        width: 100%; /* Show 1 item per slide on small screens */
+    }
+}
+
+
+    //carousel
+
+
+    /* Custom Navbar Styling */
+    .custom-navbar {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      padding: 15px 0;
+    }
+
+    /* Additional Spacing for Navbar */
+.custom-navbar .navbar-brand {
+    margin-left: 15px;  /* Adds space from the left edge */
+}
+
+.custom-navbar .navbar-nav {
+    gap: 20px; /* Space between nav links */
+}
+
+/* Fine-tuning Navbar Spacing */
+.custom-navbar .navbar-brand {
+    margin-right: 50px;  /* Extra space between brand and links */
+}
+
+.custom-navbar .navbar-nav {
+    gap: 20px;  /* Adjust space between nav items */
+}
+
+
+.custom-navbar .navbar-nav img {
+    height: 24px;
+    width: 24px;
+}
+
+/* Ensure Navbar is Properly Spaced on Large Screens */
+@media (min-width: 992px) {
+    .custom-navbar {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+    /* Hero Section Styling */
+    .hero {
+      height: 80vh;
+      background: url('{{ url_for('static', filename='images/login-img.jpg') }}') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #fff;
+    }
+
+    .hero p {
+      color: #f5f5f5;
+    }
+
+    /* Footer Styling */
+    .footer-section {
+      background-color: #212529; /* Same as the navbar's color */
+      color: white;
+      padding: 40px 0;
+      padding: 30px 0;
+      position:static ;
+      width: 100%;
+      bottom: 0;
+      z-index: 10;
+    }
+
+    /* Styling Links */
+    a {
+      color:white;
+      text-decoration: none;
+    }
+
+   .footer-section a {
+    color: #ffffff; /* Full white on hover */
+}
+
+
+    /* Page Content Margin for Fixed Header and Footer */
+    .page-content {
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+//carousel
+
+/* Frosted Glass Effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1); /* Transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Custom Navbar */
+.custom-navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: transparent; /* Ensure it's transparent for the glass effect */
+}
+
+/* Navbar Brand */
+.custom-navbar .navbar-brand {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    background: url('../images/login-background.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 5rem 0;
+    position: relative;
+}
+
+.hero h1 {
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 30px;
+}
+
+/* Frosted Footer Section */
+.footer-section {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+    padding: 30px 0;
+    text-align: center;
+    background: transparent;
+}
+
+/* Content Spacing */
+.page-content {
+    margin-top: 80px; /* For fixed header */
+    margin-bottom: 80px; /* For fixed footer */
+}
+
+/* Buttons */
+.btn-custom {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 30px;
+}
+
+.btn-custom:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: #3b5d50;
+}
+
+/* Product Image */
+.product-image img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Name and Price */
+.product-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+/* Ratings */
+.rating {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.star {
+    color: #ffc107;
+}
+
+.rating-text {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+/* Form Control Improvements */
+.form-control {
+    height: 50px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding-left: 15px;
+    border: none;
+}
+
+.form-control:focus {
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* List Styling */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* Buttons */
+button.btn {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+}
+
+button.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+button.btn-outline-secondary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+button.btn-outline-secondary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Cards and Titles */
+h2 {
+    font-weight: bold;
+    color: #343a40;
+}
+
+.card-title {
+    font-size: 1.1rem;
+}
+
+.card-text {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Carousel */
+.carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Footer Styles */
+.footer-section .custom-social li {
+    margin: 2px;
+    display: inline-block;
+}
+
+.footer-section .custom-social li a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+    background: #dce5e4;
+    color: #3b5d50;
+    border-radius: 50%;
+}
+
+.footer-section .custom-social li a:hover {
+    background: #3b5d50;
+    color: white;
+}
+
+.footer-section a {
+    color: #2f2f2f;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: rgba(47, 47, 47, 0.5);
+}
+
+.footer-section .border-top {
+    border-color: #dce5e4;
+}
+
+.footer-section .border-top.copyright {
+    font-size: 14px;
+}
+
+/* Body and Text */
+body {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+    background-color: #eff2f1;
+    color: #6a6a6a;
+    overflow-x: hidden;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+
